@@ -13,7 +13,7 @@ Setting up for local usage:
 - Connect via Compass to localhost
 - Create Database
   - Database Name: todo
-- Clone template backend: `git clone git@github.com:dbarabander/template-backend.git todo-server`
+- Clone template backend: `git clone git@github.com:CodingLawyersClub/template-backend.git todo-server`
 - `cd todo-server`
 - `yarn`
 - Search for *** throughout the app:

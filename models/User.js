@@ -19,7 +19,6 @@ var UserSchema = new mongoose.Schema({
   passwordReset: {type: String, select: false},
   passwordResetExpirationDate: {type: Date, select: false},
   salt: {type: String, required:[true, "A salt  is required"]},
-  title: {type: String, maxlength:[20, "Title must 20 characters or shorter"]},
 }, {timestamps: true});
 
 UserSchema.plugin(uniqueValidator, {message: 'That email is already associated with an account.'});
@@ -66,24 +65,8 @@ UserSchema.methods.toAuthJSON = function(){
     image: this.image,
     firstName: this.firstName,
     lastName: this.lastName,
-    linkedIn: this.linkedIn,
-    classYear: this.classYear,
-    title: this.title,
     confirmedEmail: this.confirmedEmail,
-    isActiveMember: this.isActiveMember,
-    isAdmin: this.isAdmin,
     createdAt: this.createdAt
-  };
-};
-
-UserSchema.methods.toMemberJSONFor = function(){
-  return {
-    firstName: this.firstName,
-    lastName: this.lastName,
-    linkedIn: this.linkedIn,
-    image: this.image,
-    classYear: this.classYear,
-    title: this.title
   };
 };
 
